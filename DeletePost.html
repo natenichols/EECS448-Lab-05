@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title> Delete Posts </title>
+    </head>
+
+    <h1>Delete Posts</h1>
+    <h3>Please make a selection</h3>
+    <form action="DisplayPostsForUser.php" method = "post">
+       <table style="width:100%">
+         <tr>
+           <th> Delete </th>
+           <th> Post </th>
+           <th> Author </th>
+         </tr>
+           <?php include 'ViewAllPosts.php'; ?>
+       </table>
+    <input type="submit" value="Delete Posts">
+   </form>
+</html>
