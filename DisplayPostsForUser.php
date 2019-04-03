@@ -1,3 +1,4 @@
+<table style="width:100%">
 <?php
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
@@ -11,25 +12,28 @@ if ($mysqli->connect_errno) {
     exit();
 }
 
-$query = "SELECT user_id FROM Users";
+
+$author = $_POST['choice'];
+
+$query = "SELECT content FROM Posts WHERE author_id = '$author'";
 $mysqli->query($query);
 
 if ($result = $mysqli->query($query)) {
 
-
+    echo "<th> Posts from ".$author."</th>";
 
     /* fetch associative array */
     while ($row = $result->fetch_assoc()) {
-      echo "<option value='" $row["user_id"] "'>" . $row["user_id"] . "</option>";
+        echo "<tr>";
+        echo "<td>" . $row["content"] . "</td>";
+        echo "<tr>";
     }
 
     /* free result set */
     //$result->free();
 }
-$author = $_POST["choice"];
-echo "<p>".$author."</p>";
-
 
 /* close connection */
 $mysqli->close();
 ?>
+</table>

@@ -1,15 +1,14 @@
 <html>
     <head>
-        <title> Home Admin Profile</title>
+        <title> View Posts</title>
     </head>
 
     <h1>Access to View users and posts</h1>
     <h3>Please make a selection</h3>
-    <select>
-       <?php include 'ViewUserPosts.php'; ?>
-     </select>
-
-
-
-
+    <form action="DisplayPostsForUser.php" method = "post">
+      <select name = "choice" method = "post">
+         <?php include 'ViewUserPosts.php'; ?>
+       </select>
+       <input type="submit" value="View Posts">
+   </form>
 </html>
