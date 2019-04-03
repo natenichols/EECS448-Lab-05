@@ -20,7 +20,7 @@ if ($result = $mysqli->query($query)) {
 
     while ($row = $result->fetch_assoc()) {
       echo "<tr>";
-      echo "<td><input type = 'checkbox' value='" . $row["post_id"] . "'></input></td>";
+      echo "<td><input type = 'checkbox' name='" . $row["post_id"] . "'></input></td>";
       echo "<td>".$row["content"]."</td>";
       echo "<td>".$row["author_id"]."</td>";
       echo "</tr>";
